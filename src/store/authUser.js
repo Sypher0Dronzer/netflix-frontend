@@ -29,6 +29,7 @@ export const useAuthStore = create((set) => ({
       toast.success("Logged In successfully");
       set({ user: response.data.user, isLoggingIn: false });
     } catch (err) {
+      console.log(err.message)
       toast.error(err.response.data.message || "LogIn failed");
       set({ isLoggingIn: false, user: null });
     }
