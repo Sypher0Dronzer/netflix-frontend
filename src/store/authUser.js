@@ -24,7 +24,7 @@ export const useAuthStore = create((set) => ({
   login: async (credentials) => {
     set({ isLoggingIn: true });
     try {
-      const response = await axios.post("/api/v1/auth/login", credentials);
+      const response = await axios.post("https://netflix-backend-6kdl.onrender.com/api/v1/auth/login", credentials);
 
       toast.success("Logged In successfully");
       set({ user: response.data.user, isLoggingIn: false });
