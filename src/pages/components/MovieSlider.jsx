@@ -23,7 +23,7 @@ const MovieSlider = ({ category }) => {
 
   useEffect(() => {
     const getContent = async () => {
-      const res = await axios.get(`/api/v1/${contentType}/${category}`);
+      const res = await axios.get(`https://netflix-backend-6kdl.onrender.com/api/v1/${contentType}/${category}`);
       setContent(res.data.content);
     };
 

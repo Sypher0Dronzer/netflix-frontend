@@ -32,7 +32,7 @@ const WatchPage = () => {
   useEffect(() => {
     const getTrailers = async () => {
       try {
-        const res = await axios.get(`/api/v1/${type}/${id}/trailers`);
+        const res = await axios.get(`https://netflix-backend-6kdl.onrender.com/api/v1/${type}/${id}/trailers`);
         setTrailers(res.data.trailers);
       } catch (error) {
         if (error.message.includes("404")) {
@@ -48,7 +48,7 @@ const WatchPage = () => {
   useEffect(() => {
     const getSimilarContent = async () => {
       try {
-        const res = await axios.get(`/api/v1/${type}/${id}/similar`);
+        const res = await axios.get(`https://netflix-backend-6kdl.onrender.com/api/v1/${type}/${id}/similar`);
         setSimilarContent(res.data.similar);
       } catch (error) {
         if (error.message.includes("404")) {
@@ -64,7 +64,7 @@ const WatchPage = () => {
   useEffect(() => {
     const getContentDetails = async () => {
       try {
-        const res = await axios.get(`/api/v1/${type}/${id}/details`);
+        const res = await axios.get(`https://netflix-backend-6kdl.onrender.com/api/v1/${type}/${id}/details`);
         setContent(res.data.content);
       } catch (error) {
         if (error.message.includes("404")) {
@@ -95,7 +95,7 @@ const WatchPage = () => {
   useEffect(() => {
     const getCreditData = async () => {
       try {
-        const res = await axios.get(`/api/v1/${type}/${id}/credits`);
+        const res = await axios.get(`https://netflix-backend-6kdl.onrender.com/api/v1/${type}/${id}/credits`);
         const data = res.data.credits.cast;
         setCredit(data);
       } catch (error) {
