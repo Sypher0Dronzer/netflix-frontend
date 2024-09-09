@@ -9,7 +9,6 @@ const useGetTrendingContent = () => {
   useEffect(() => {
     const getTrendingContent = async () => {
       const res = await axios.get(`https://netflix-backend-6kdl.onrender.com/api/v1/${contentType}/trending`);
-      console.log('here lies the problem')
       setTrendingContent(res.data.content);
     };
     getTrendingContent();

@@ -2,9 +2,14 @@ import { Helmet } from "react-helmet"
 import { useAuthStore } from "../../store/authUser"
 import AuthScreen from "./AuthScreen"
 import HomeScreen from "./HomeScreen"
+import { useEffect } from "react"
 
 const HomePage = () => {
   const {user}= useAuthStore()
+  useEffect(()=>{
+    console.log(user)
+
+  },[user])
   return (
     <>
     <Helmet>
