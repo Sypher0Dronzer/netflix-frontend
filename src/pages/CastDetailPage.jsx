@@ -26,7 +26,8 @@ const CastDetailPage = () => {
   useEffect(() => {
     const getCastDetails = async (id) => {
       try {
-        const res = await axios.get(`https://netflix-backend-6kdl.onrender.com/api/v1/cast/${id}`);
+        const res = await axios.get(`https://netflix-backend-6kdl.onrender.com/api/v1/cast/${id}`,{
+          withCredentials: true,});
         setTvsCasted(res.data.tvs.cast);
         setMoviesCasted(res.data.movies.cast);
         setDetails(res.data.castDetails);

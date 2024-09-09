@@ -8,7 +8,9 @@ const useGetTrendingContent = () => {
 
   useEffect(() => {
     const getTrendingContent = async () => {
-      const res = await axios.get(`https://netflix-backend-6kdl.onrender.com/api/v1/${contentType}/trending`);
+      const res = await axios.get(`https://netflix-backend-6kdl.onrender.com/api/v1/${contentType}/trending`, {
+        withCredentials: true, // Add this to include cookies or authentication credentials
+      });
       setTrendingContent(res.data.content);
     };
     getTrendingContent();
