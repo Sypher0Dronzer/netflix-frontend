@@ -11,7 +11,8 @@ export const useAuthStore = create((set) => ({
   signup: async (credentials) => {
     set({ isSigningUp: true });
     try {
-      const response = await axios.post("https://netflix-backend-6kdl.onrender.com/api/v1/auth/signup", credentials);
+      const response = await axios.post("https://netflix-backend-6kdl.onrender.com/api/v1/auth/signup", credentials,{
+        withCredentials: true,});
 
       toast.success("Account created successfully");
       set({ user: response.data.user, isSigningUp: false });
